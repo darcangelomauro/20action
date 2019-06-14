@@ -92,24 +92,24 @@ putting the coefficient of $\delta W$ or $\delta W^\dagger$ to zero gives:
 \rho^2 = 0 \quad \text{or} \quad \rho^2 = -\frac{g}{8}.
 \end{equation}
 \subsection{Quadratic action in $\delta W$}
-Write $W = \rho \eit + \epsilon V$ for small $\epsilon$. We will separate the contributions to the action in orders of $\epsilon$.
+Write $W = \eit(\rho + \epsilon V)$ for small $\epsilon$ and traceless $V$. We will separate the contributions to the action in orders of $\epsilon$.
 \begin{align}
 \Tr D^2 \notag \\
 O(1)&: \quad 4Cn^2 \rho^2 \\
-O(\epsilon)&: \quad 4Cn \rho (\eit \Tr V^\dagger + \emit \Tr V) \\
+O(\epsilon)&: \quad 4Cn \rho ( \Tr V^\dagger + \Tr V) \\
 O(\epsilon^2)&: \quad 2C (n \Tr V V^\dagger + \Tr V \Tr V^\dagger)
 \end{align}
 \begin{align}
 \Tr D^4 \notag \\
 O(1)&: \quad 16Cn^2 \rho^4 \\
-O(\epsilon)&: \quad 24 C n \rho^3 \emit \Tr V + \text{c.c.} \\
-O(\epsilon^2)&: \quad 8C\rho^2(2n \Tr V V^\dagger + n \emits \Tr V V \\
-&\phantom{:\quad \ }+2 \Tr V \Tr V^\dagger + \emits \Tr V \Tr V + \text{c.c.}) \notag 
+O(\epsilon)&: \quad 24 C n \rho^3 \Tr V + \text{c.c.} \\
+O(\epsilon^2)&: \quad 8C\rho^2(2n \Tr V V^\dagger + n \Tr V V \\
+&\phantom{:\quad \ }+2 \Tr V \Tr V^\dagger + \Tr V \Tr V + \text{c.c.}) \notag 
 \end{align}
-Replacing $\Tr V$ with $\langle \Tr V \rangle$ (?does this makes sense?), the action to second order in $\epsilon$ reads:
+Since $V$ is traceless, the action to second order in $\epsilon$ reads:
 \begin{align}
 S &= 2Cn^2(g \rho^2 + 4\rho^4) + Cn \epsilon^2 \Tr V V^\dagger (g + 16 \rho^2) \notag \\
-&\phantom{\quad}+ 8Cn \epsilon^2 \rho^2 \emits \Tr V V + \text{c.c.}
+&\phantom{\quad}+ 8Cn \epsilon^2 \rho^2 \Tr V V + \text{c.c.}
 \end{align}
 Or:
 \begin{equation}
@@ -118,8 +118,8 @@ S = 4Cn^2(g \rho^2 + 4 \rho^4) + Cn \epsilon^2 \Tr(\vec{V}^T M \vec{V})
 with $\vec{V}^T = (V, V^\dagger)$ and:
 \begin{equation}
 M = \begin{bmatrix}
-    8 \rho^2 \emits & g + 16 \rho^2 \\
-    g + 16 \rho^2 & 8 \rho^2 \eits \\
+    8 \rho^2 & g + 16 \rho^2 \\
+    g + 16 \rho^2 & 8 \rho^2 \\
 \end{bmatrix}
 \end{equation}
 
