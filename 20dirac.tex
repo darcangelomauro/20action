@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd}
+\usepackage[symbol]{footmisc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[english]{babel}
+\linespread{1.25}
+
+
+\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\eit}{e^{i \theta}}
+\newcommand{\eits}{e^{2i \theta}}
+\newcommand{\emit}{e^{-i \theta}}
+\newcommand{\emits}{e^{-2i \theta}}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\T}{\text{\scriptsize T}}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\begin{document}
+\section{Gaussian model for the $(2,0)$ Dirac operator}
+\subsection{Notation}
+\begin{equation}
+D = \gamma_1 \otimes \{H_1, \cdot \} + \gamma_2 \otimes \{H_2, \cdot \}.
+\end{equation}
+Define $\gamma_{\pm} := \frac{1}{2}(\gamma_1 \mp i \gamma_2)$ and $W := H_1 + i H_2$. $D$ becomes:
+\begin{equation}
+D = \gamma_+ \otimes \{ W, \cdot \} + \gamma_- \otimes \{ W^\dagger, \cdot \}
+\end{equation}
+And the following relations hold:
+\begin{align}
+\gamma_\pm^2 &= 0 \label{prop1} \\
+\gamma_\pm \gamma_\mp &= \frac{1}{2}(I_C \pm i \gamma_1 \gamma_2) \label{prop2} \\
+(\gamma_\pm \gamma_\mp)^2 &= \gamma_\pm \gamma_\mp \label{prop3}
+\end{align}
+where $I_C$ is the identity in the space of $\gamma$ matrices.
+\subsection{Action, $\Tr D^2$ part}
+Because of Eq.(\ref{prop1}), only the cross terms survive in $D^2$:
+\begin{equation}
+D^2 = \gamma_+ \gamma_- \otimes \{ W, \cdot \} \{ W^\dagger , \cdot \} + \gamma_- \gamma_+ \otimes \{ W^\dagger , \cdot \} \{ W , \cdot \}
+\end{equation}
+Taking the trace yields:
+\begin{equation}
+\Tr D^2 = 2 C (n \Tr W W^{\dagger} + \Tr W \Tr W^{\dagger})
+\end{equation}
+where $C$ is the dimension of the $\gamma$ matrices and $n$ the dimension of the $W$ matrix.
+\subsection{Action, $\Tr D^4$ part}
+Because of Eq.(\ref{prop1}), the cross terms vanish when squaring $D^2$:
+\begin{equation}
+D^4 =  \gamma_+ \gamma_- \otimes (\{ W, \cdot \} \{ W^\dagger , \cdot \})^2 + \gamma_- \gamma_+ \otimes (\{ W^\dagger , \cdot \} \{ W , \cdot \})^2
+\end{equation}
+Taking the trace yields:
+\begin{align}
+\Tr D^4 &= 2 C \big[ n \Tr(W W^\dagger)^2 + \Tr W^2 \Tr W^{\dagger 2} + 2 (\Tr W W^\dagger)^2 \notag \\ 
+&+ 2 \Tr W^2 W^\dagger \Tr W^\dagger + 2 \Tr W^{\dagger 2} W \Tr W \big].
+\end{align}
+\subsection{Stationary point}
+Stationary points are solutions to the equation
+\begin{equation}
+\delta S = S[W + \delta W] - S[W] = 0 \quad  \forall \ \delta W \ll 1.
+\end{equation}
+To first order in $\delta W$ the terms $\Tr D^2$ and $\Tr D^4$ give:
+\begin{equation}
+\delta \Tr D^2 = 2 C \big[ n \Tr W \delta W^\dagger + n \Tr W^\dagger \delta W + \Tr W \Tr \delta W^\dagger + \Tr W^\dagger \Tr \delta W \big]
+\end{equation}
+\begin{align}
+\delta \Tr D^4 &= 2 C \big[ 2n \Tr ( W W^\dagger W \delta W^\dagger) + 2n \Tr ( W^\dagger W W^\dagger \delta W) \notag \\ 
+&+ 2 \Tr W^2 \Tr W^\dagger \delta W^\dagger +  2 \Tr W^{\dagger 2} \Tr W \delta W \notag \\
+&+ 4 \Tr W W^\dagger ( \Tr W \delta W^\dagger + \Tr W^\dagger \delta W) \notag \\ 
+&+ 2 \Tr W^2 W^\dagger \Tr \delta W^\dagger + 2 \Tr W^{\dagger 2} W \Tr \delta W \notag \\
+&+ 2 \Tr W^\dagger ( \Tr W^2 \delta W^\dagger + \Tr W W^\dagger \delta W + \Tr W^\dagger W \delta W) \notag \\
+&+ 2 \Tr W ( \Tr W^{\dagger 2} \delta W + \Tr W^\dagger W \delta W^\dagger + \Tr W W^\dagger \delta W^\dagger) \big].
+\end{align}
+We check for solutions of the form:
+\begin{equation}
+W = I \rho e^{i \theta}
+\end{equation}
+with $\rho > 0$ and $\theta \in [0, 2 \pi )$.
+\begin{align}
+\Tr D^2&: \quad 4 C n \rho \ ( \eit \Tr \delta W^\dagger + \emit \Tr \delta W) \\
+\Tr D^4&: \quad 4 C n \rho \ ( 8 \rho^2 \eit \Tr \delta W^\dagger + 8 \rho^2 \emit \Tr \delta W)
+\end{align}
+putting the coefficient of $\delta W$ or $\delta W^\dagger$ to zero gives:
+\begin{equation}
+\rho^2 = 0 \quad \text{or} \quad \rho^2 = -\frac{g}{8}.
+\end{equation}
+\subsection{Quadratic action in $\delta W$}
+Write $W = \rho \eit + \epsilon V$ for small $\epsilon$. We will separate the contributions to the action in orders of $\epsilon$.
+\begin{align}
+\Tr D^2 \notag \\
+O(1)&: \quad 4Cn^2 \rho^2 \\
+O(\epsilon)&: \quad 4Cn \rho (\eit \Tr V^\dagger + \emit \Tr V) \\
+O(\epsilon^2)&: \quad 2C (n \Tr V V^\dagger + \Tr V \Tr V^\dagger)
+\end{align}
+\begin{align}
+\Tr D^4 \notag \\
+O(1)&: \quad 16Cn^2 \rho^4 \\
+O(\epsilon)&: \quad 24 C n \rho^3 \emit \Tr V + \text{c.c.} \\
+O(\epsilon^2)&: \quad 8C\rho^2(2n \Tr V V^\dagger + n \emits \Tr V V \\
+&\phantom{:\quad \ }+2 \Tr V \Tr V^\dagger + \emits \Tr V \Tr V + \text{c.c.}) \notag 
+\end{align}
+Replacing $\Tr V$ with $\langle \Tr V \rangle$ (?does this makes sense?), the action to second order in $\epsilon$ reads:
+\begin{align}
+S &= 2Cn^2(g \rho^2 + 4\rho^4) + Cn \epsilon^2 \Tr V V^\dagger (g + 16 \rho^2) \notag \\
+&\phantom{\quad}+ 8Cn \epsilon^2 \rho^2 \emits \Tr V V + \text{c.c.}
+\end{align}
+Or:
+\begin{equation}
+S = 4Cn^2(g \rho^2 + 4 \rho^4) + Cn \epsilon^2 \Tr(\vec{V}^T M \vec{V}) 
+\end{equation}
+with $\vec{V}^T = (V, V^\dagger)$ and:
+\begin{equation}
+M = \begin{bmatrix}
+    8 \rho^2 \emits & g + 16 \rho^2 \\
+    g + 16 \rho^2 & 8 \rho^2 \eits \\
+\end{bmatrix}
+\end{equation}
+
+\end{document}
